@@ -1,3 +1,6 @@
 language: java
 jdk: oraclejdk11
-script: "cd target && java -jar SQLancer-0.0.1-SNAPSHOT.jar --timeout-seconds 30 sqlite3"
+script:
+- wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.20-linux-glibc2.12-x86_64.tar.xz && tar -xJf mysql-8.0.20-linux-glibc2.12-x86_64.tar.xz
+- sudo mysql-8.0.20-linux-glibc2.12-x86_64/bin/mysqld_safe --user=mysql
+- "cd target && java -jar SQLancer-0.0.1-SNAPSHOT.jar --timeout-seconds 30 sqlite3"
